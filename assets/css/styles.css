@@ -19,6 +19,9 @@ body{
     position: relative;
 
 }
+.nav-site{
+    position: sticky;
+}
 .mobile-nav{
     display: flex;
     margin-left: 40px;

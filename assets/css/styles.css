@@ -5,6 +5,7 @@ body{
     margin: auto;
     overflow-x: hidden;
     padding: 0;
+    position: relative;
 }
 .container{
     max-width: 100vw;
@@ -17,10 +18,14 @@ body{
     margin-right: 20px;
     align-items: center;
     position: relative;
+    /* color:#041C43; */
 
 }
 .nav-site{
-    position: sticky;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    transition: background-color 0.5s;
 }
 .mobile-nav{
     display: flex;
@@ -34,7 +39,6 @@ body{
 }
 #logo{
     width: 150px;
-
 }
 .mobile-nav .menu{
     width: 40px;
@@ -49,10 +53,32 @@ ul.parent-controls{
     padding:0;
     display: flex;
 }
-ul li.desktop-nav-control{
+.desktop-nav-control{
     padding: 18px;
-    color: #041C43;
+    color: white;
+    cursor: pointer;
 }
+.desktop-nav-control:hover{
+    color:#5cd7f6;
+}
+
+.desktop-nav-control-scrolled{
+    padding: 18px;
+    color:#041C43;
+    cursor: pointer;
+}
+.desktop-nav-control-scrolled:hover{
+    color:#5cd7f6;
+}
+.scrolled-nav-bar{
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    color:#041C43;
+    transition: background-color 0.5s;
+}
+
 
 ul.action-controls{
     list-style: none;
@@ -67,13 +93,9 @@ ul.action-controls{
     padding-right: 10px;
 }
 
-.parent-controls li:hover{
-    cursor: pointer;
-    color: #5cd7f6;
-}
 #search{
     padding: 12px;
-    width: 100px;
+    width: 200px;
     border: 0;
     border-radius: 8px;
     font-size: 16px;
@@ -95,17 +117,14 @@ ul.action-controls{
     border-color: #041C43;
     box-shadow: 0 0 0 4px rgb(0 191 255 / 15%);
 }
-#avatar-icon{
-    border-radius: 16px;
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-}
+
 
 /* cover */
-
+/* .cover-container{
+    height: 
+} */
 .cover-wrapper{
-    height: 340px;
+    height: 500px;
     width: 100%;
 }
 .cover-img{
@@ -116,7 +135,7 @@ ul.action-controls{
 .cover-text{
     padding: 10px;
     text-align: left;
-    bottom: 53%;
+    bottom: 40%;
     margin-left: 40px;
     position: absolute;
     color: white;
@@ -132,7 +151,6 @@ ul.action-controls{
 }
 
 .cover-container{
-    height: 400px;
     position: relative;
     width: 100%;
 }
@@ -150,7 +168,7 @@ ul.action-controls{
     width: 88%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0px auto;
+    margin: 50px auto;
     column-gap: 50px;
     row-gap: 35px;
 }
@@ -186,10 +204,26 @@ ul.action-controls{
 .login:hover{
     background-color: #5cd7f6;
 }
-.load-more:hover{
-    cursor: pointer;
-    background-color:#dddddd
+.slide-show{
+    width: 600px;
+    height: 400px;
 }
+@keyframes example {
+    from {display: none;}
+    to {display: block;}
+  }
+.slides{
+    height: 400px;
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
 .footer{
     margin:0;
     padding: 50px 100px 50px 100px;

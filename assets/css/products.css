@@ -6,7 +6,18 @@
     position: relative;
     height: 650px;
 }
-.cover-text{
+.div-link{
+    position: absolute;
+    top: 50%;
+    left: 4%;
+}
+.div-link span{
+    color: white;
+}
+.cover-wrapper{
+    position: relative;
+}
+.cover-card{
     align-items: center;
     background-color: white;
     width: 70%;
@@ -51,23 +62,24 @@
 .button:hover{
     background-color:#39c0e2;
 }
-/* .products-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-} */
+
+
 .main-content{
     width:75%;
     column-gap: 20px;
 }
+
 .grid-card{
     color:#041C43;
     background-color: #F7F7F7;
     padding-left: 25px;
-    height: 350px;
+    height: 450px;
 }
+
 ul li{
     padding: 8px;
 }
 .middle-div div h1{
     color:#041C43;
 }
+

@@ -157,12 +157,32 @@ ul.action-controls{
     position: relative;
     width: 100%;
 }
+.div-link{
+    display: flex;
+    align-items: center;
+    width:fit-content;
+    height: 30px;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+.div-link span{
+    padding: 6px;
+}
+
+.div-link span:first-child{
+    color:#afafaf;
+}
+.div-link span:hover{
+    color: white;
+}
 
 
 
 #tag{
     padding: 10px;
-    color:#6e6d7a
+    color:#6e6d7a;
 }
 
 

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Banking Jey International Bank</title>
+    <link rel="stylesheet" href="assets/css/login_form.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="stylesheet" href="assets/css/e_banking.css">
+    
+    <link rel="shortcut icon" href="assets/img/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div id="top-nav" class="nav-site">
+            <div class="desktop-top-nav">
+                <div>
+                    <a href="">
+                        <div>
+                            <img id="logo" src="assets/img/logo-white.svg" alt="">
+                        </div>
+                    </a>
+
+                </div>
+                <ul class="parent-controls">
+                    <a href="index.html"><li class="desktop-nav-control">Home</li></a>
+                    <a href="about.html"><li class="desktop-nav-control">About</li></a>
+                    <a href="products_and_services.html"><li class="desktop-nav-control">Product and Services</li></a>
+                    <a href="e_banking.html"><li class="desktop-nav-control">E-banking</li></a>
+                    <a href="contact.html"><li class="desktop-nav-control">Contact</li></a>
+                </ul>
+
+                <ul class="action-controls">
+                    <li id="account-controls" class="top-nav-control">
+                        <div id="signOut" onclick="signOut()" class="div-link"><a href="e_banking.html"><span>Sign out</span></a></div>
+                        <input id="search" type="text" placeholder="Search" name="search">
+                    </li>
+                </ul>
+
+            </div>
+            <div class="mobile-nav">
+                <div id="logo">
+                    <a href="">
+                        <div>
+                            <img id="logo" src="assets/img/logo.svg" alt="">
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="cover-container">
+            <div class="cover-wrapper">
+                <img class="cover-img" src="./assets/img/cover-e_banking.jpg" alt="">
+                <div class="cover-text">
+                    <h1 id="welcome-msg">Welcome to E-banking</h1>
+                    <div class="div-link"><a href="index.html"><span>Jey Bank</span></a>
+                        <span>></span>
+                        <span>e-Banking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <div class="login-container" id="container">
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1 class="blue">Sign in</h1>
+                    <span>and make a deposit</span>
+                    <input type="name" placeholder="Username" />
+                    <input type="password" placeholder="Password" />
+                    <a href="#">Forgot your password?</a>
+                    <a href="e_banking.html"><button id="signIn">Sign In</button></a>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Login to your account</h1>
+                        <p>Enter your personal details and make a deposit</p>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-container" id="depositForm">
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1 class="blue">Deposit Form</h1>
+                    <span>Enter amount to deposit in Ghs.</span>
+                    <input id="depositAmount" type="number" placeholder="Amount" />
+                    <button id="deposit">Deposit</button>
+                    <button id="signOutBottom" onclick="signOut()">Sign out </button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <h1>Balance: </h1>
+                        <p>Ghs <span id="balance">0.00</span></p>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-wrapper">
+                <div class="blocks">
+                    <div  class = "heading no-margin">CERTIFICATIONS</div>
+                    <a href="" class="footer-link">
+                        <div class="desc">
+                            <img src="assets/img/certifications.png" alt="">
+                        </div>
+                    </a>
+                </div>
+                <div class="blocks">
+                    <div  class = "heading no-margin">HELP CENTER</div>
+                    <a href="#" class="footer-link">Payment Services</a>
+                    <a href="#" class="footer-link">Online Security</a>
+                    <a href="#" class="footer-link">Frequently Asked Questions</a>
+
+                </div>
+                <div class="blocks">
+                    <div  class = "heading no-margin" >QUICK LINKS</div>
+                    <a href="#" class="footer-link">E-banking</a>
+                    <a href="#" class="footer-link">Card Producs</a>
+                    <a href="#" class="footer-link">Branch Information</a>
+
+                </div>
+            </div>
+            <hr id="horizontal">
+            <div class="copyright">
+                <div class="left">© 2021 Jey Bank(International) Limited. All rights reserved.</div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/navBar.js">
+    </script>
+    <script src="scripts/account.js"></script>
+</body>
+
+</html>

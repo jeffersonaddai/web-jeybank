@@ -1,0 +1,21 @@
+
+.div-link{
+    background-color:#041C43;
+    margin-top: 15px;
+    margin-right: 20px;
+    opacity:1;
+}
+#account-controls{
+    display: flex;
+}
+
+#signOut{
+    visibility: hidden;
+}
+#signOutBottom{
+    margin-top: 20px;
+}
+#signOutBottomLink{
+    color: white;
+    font-size: 12px;
+}

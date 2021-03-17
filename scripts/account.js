@@ -1,4 +1,4 @@
-// container for both the sign in form and the deposit form
+// container for the sign in form
 var container = document.querySelector('#container');
 // the input box of deposit form
 document.querySelector("#depositAmount").value = "";
@@ -8,7 +8,7 @@ var balance = document.querySelector('#balance');
 var depositBtn = document.querySelector("#deposit");
 var signOutBtn = document.querySelector("#signOut");
 depositBtn.addEventListener('click', deposit);
-// user is logged in
+// is user logged in?
 isLoggedIn();
 
 signInBtn.addEventListener('click', function(){
@@ -38,7 +38,6 @@ function signOut(){
   document.cookie = "username=";
   document.cookie = "password=";
   document.cookie = "balance=0.00";
-  document.cookie = "balance=0.00";
   container.style.display = "block";
   document.querySelector("#welcome-msg").innerText = "Welcome to E-banking"
   depositForm.style.display = "none";
@@ -53,9 +52,10 @@ function deposit(){
   }
   else depositAmount = parseFloat(amountInp.value);
   document.cookie = "balance=" + (depositAmount + initialBalance);
+  // set the balance innerText to the new balance from the cookie
   balance.innerText = getCookie("balance");
   amountInp.value = "";
-  alert("Deposit of " + depositAmount + " Ghs made.");
+  alert("Deposit of Ghs " + depositAmount + " made.\nNew balance is Ghs " + getCookie("balance"));
 }
 
 function getCookie(cname) {

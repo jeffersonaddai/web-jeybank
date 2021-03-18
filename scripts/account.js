@@ -16,28 +16,30 @@ signInBtn.addEventListener('click', function(){
     var username = document.querySelectorAll('[type="name"]')[0].value;
     // get password
     var password = document.querySelectorAll('[type="password"]')[0].value;
-	  document.cookie = "username=" + username;
-    document.cookie = "password=" + password;
-    document.cookie = "balance=0.00";
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+    localStorage.setItem('balance', '0.00');
     isLoggedIn();
   })
 
 function isLoggedIn(){
-  if(getCookie("username") != ""){
-    document.querySelector("#welcome-msg").innerText = "Welcome " + getCookie("username");
+  if(localStorage.getItem('username') != ""){
+    document.querySelector("#welcome-msg").innerText = "Welcome " + localStorage.getItem('username');
     container.style.display = "none";
     depositForm.style.display = "block";
-    balance.innerText = getCookie("balance");
+    balance.innerText = localStorage.getItem('balance');
     signOutBtn.style.visibility = "visible";
   }
-  else depositForm.style.display = "none";
+  else{
+    depositForm.style.display = "none";
+  } 
 }
 
 
 function signOut(){
-  document.cookie = "username=";
-  document.cookie = "password=";
-  document.cookie = "balance=0.00";
+  localStorage.setItem('username', '');
+  localStorage.setItem('password', '');
+  localStorage.setItem('balance', '0.00');
   container.style.display = "block";
   document.querySelector("#welcome-msg").innerText = "Welcome to E-banking"
   depositForm.style.display = "none";
@@ -45,17 +47,17 @@ function signOut(){
 
 function deposit(){
   var depositAmount;
-  var initialBalance = parseFloat(getCookie("balance"));
+  var initialBalance = parseFloat(localStorage.getItem('balance'));
   var amountInp = document.querySelector("#depositAmount");
   if(amountInp.value == "" | parseFloat(amountInp.value) < 0){
     depositAmount = 0.00;
   }
   else depositAmount = parseFloat(amountInp.value);
-  document.cookie = "balance=" + (depositAmount + initialBalance);
+  localStorage.setItem('balance', (depositAmount + initialBalance));
   // set the balance innerText to the new balance from the cookie
-  balance.innerText = getCookie("balance");
+  balance.innerText = localStorage.getItem("balance");
   amountInp.value = "";
-  alert("Deposit of Ghs " + depositAmount + " made.\nNew balance is Ghs " + getCookie("balance"));
+  alert("Deposit of Ghs " + depositAmount + " made.\nNew balance is Ghs " + localStorage.getItem("balance"));
 }
 
 function getCookie(cname) {

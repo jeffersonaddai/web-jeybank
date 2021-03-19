@@ -49,9 +49,9 @@ function isLoggedIn(){
 
 
 function signOut(){
-  localStorage.setItem('username', "null");
-  localStorage.setItem('password', "null");
-  localStorage.setItem('balance', '0.00');
+  localStorage.removeItem('username');
+  localStorage.removeItem('password');
+  localStorage.removeItem('balance')
   container.style.display = "block";
   document.querySelector("#welcome-msg").innerText = "Welcome to E-banking"
   depositForm.style.display = "none";

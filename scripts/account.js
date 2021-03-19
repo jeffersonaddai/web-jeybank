@@ -16,14 +16,20 @@ signInBtn.addEventListener('click', function(){
     var username = document.querySelectorAll('[type="name"]')[0].value;
     // get password
     var password = document.querySelectorAll('[type="password"]')[0].value;
-    if(username != ""){
+    if (username =="" && password==""){
+      alert("Please type your username and password");
+    }
+    else if (username==""){
+      alert("Please type your username");
+    }
+    else if (password==""){
+      alert("Please type your password");
+    }
+    else{
       localStorage.setItem('username', username);
       localStorage.setItem('password', password);
       localStorage.setItem('balance', '0.00');
       isLoggedIn();
-    }
-    else{
-      alert("Please type your username and password");
     } 
   })
 

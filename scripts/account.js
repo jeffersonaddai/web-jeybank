@@ -23,7 +23,7 @@ signInBtn.addEventListener('click', function(){
   })
 
 function isLoggedIn(){
-  if(localStorage.getItem('username') != ""){
+  if(localStorage.getItem('username') != null){
     document.querySelector("#welcome-msg").innerText = "Welcome " + localStorage.getItem('username');
     container.style.display = "none";
     depositForm.style.display = "block";

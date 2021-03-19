@@ -28,7 +28,7 @@ signInBtn.addEventListener('click', function(){
   })
 
 function isLoggedIn(){
-  if(localStorage.getItem('username') != "null"){
+  if(localStorage.getItem('username') != "null" && localStorage.getItem('username') != null){
     console.log("local storage is not null")
     document.querySelector("#welcome-msg").innerText = "Welcome " + localStorage.getItem('username');
     container.style.display = "none";

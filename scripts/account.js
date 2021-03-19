@@ -16,14 +16,20 @@ signInBtn.addEventListener('click', function(){
     var username = document.querySelectorAll('[type="name"]')[0].value;
     // get password
     var password = document.querySelectorAll('[type="password"]')[0].value;
-    localStorage.setItem('username', username);
-    localStorage.setItem('password', password);
-    localStorage.setItem('balance', '0.00');
-    isLoggedIn();
+    if(username != ""){
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+      localStorage.setItem('balance', '0.00');
+      isLoggedIn();
+    }
+    else{
+      alert("Please type your username and password");
+    } 
   })
 
 function isLoggedIn(){
-  if(localStorage.getItem('username') != null){
+  if(localStorage.getItem('username') != "null"){
+    console.log("local storage is not null")
     document.querySelector("#welcome-msg").innerText = "Welcome " + localStorage.getItem('username');
     container.style.display = "none";
     depositForm.style.display = "block";
@@ -37,12 +43,13 @@ function isLoggedIn(){
 
 
 function signOut(){
-  localStorage.setItem('username', '');
-  localStorage.setItem('password', '');
+  localStorage.setItem('username', "null");
+  localStorage.setItem('password', "null");
   localStorage.setItem('balance', '0.00');
   container.style.display = "block";
   document.querySelector("#welcome-msg").innerText = "Welcome to E-banking"
   depositForm.style.display = "none";
+  location.reload();
 }
 
 function deposit(){
